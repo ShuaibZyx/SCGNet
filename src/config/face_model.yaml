@@ -1,0 +1,39 @@
+FaceModelConfig:
+  _target_: src.model_config.FaceModelConfig
+  experiment: Face-Best-Encoder
+  # dataset
+  dataset_path: /home/kemove/devdata1/zyx/datasets/Zurich_Filtered/Zurich_Filtered_Polygon_Processed.pkl
+  batch_size: 32
+  shuffle_vertices: True
+  augmentation: True
+  encoder_config: 
+    {
+      "hidden_size": 384, 
+      "fc_size": 1024, 
+      "num_layers": 12, 
+      "dropout_rate": 0.2
+    }
+  decoder_config: 
+    {
+      "hidden_size": 384, 
+      "fc_size": 1024, 
+      "num_layers": 12, 
+      "dropout_rate": 0.2
+    }
+  pcfvwa_config:
+    {
+      "drop_radio": 0.2,
+      "radii": [0.025, 0.05, 0.075, 0.1], 
+      "nsamples": [32, 64, 96, 128], 
+      "mlps": [[387, 384], [387, 384], [387, 384], [387, 384]]
+    }
+    # "radii": [0.025, 0.05, 0.075, 0.1, 0.125, 0.15], 
+    # "nsamples": [32, 64, 96, 128, 160, 192], 
+    # "mlps": [[387, 384], [387, 384], [387, 384], [387, 384], [387, 384], [387, 384]]
+  quantization_bits: 8
+  face_max_count: 198 # (Zurich:79, Tallinn:196) + 2
+  face_vertex_max_count: 5 # (Zurich:57, Tallinn:3) + 2
+  # loss
+  learning_rate: 3e-4
+  warmup_steps: 10000
+  epochs: 200

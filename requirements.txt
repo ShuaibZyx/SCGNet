@@ -1,0 +1,16 @@
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+hydra-core==1.3.2
+matplotlib==3.9.2
+numpy==1.26.4
+open3d==0.18.0
+point-cloud-utils==0.31.0
+lightning==2.2.4
+trimesh==4.5.1
+shapely==2.0.6
+tqdm==4.66.5
+warmup_scheduler==0.3
+wandb==0.18.5
+randomname==0.2.1
+moviepy==2.1.2
