@@ -93,6 +93,10 @@ python setup.py install
 `Next, modify the configuration settings to match your file path, then run 'inference/generate_meshes.py'`
 
 
+### Say something
+`I went through a lot of trouble writing this article, and I hope this code proves helpful to you. In addition to the models related to the article, this repository also includes code for metric calculations, figure generation, and mesh rendering.🤗`
+
+
 ### Acknowledgement
 
 - [Point2Building](https://github.com/prs-eth/point2building)

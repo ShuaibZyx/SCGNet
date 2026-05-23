@@ -113,13 +113,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--vc",
         type=str,
-        default="02251006_Vertex-Full-TorchSparse-Tallinn_brass-sitrep",
+        default="",
         help="要加载的顶点模型权重名称",
     )
     parser.add_argument(
         "--fc",
         type=str,
-        default="03232127_Full-Tallinn-Best_frayed-marsanne",
+        default="",
         help="要加载的平面模型权重名称",
     )
     parser.add_argument(
@@ -145,7 +145,8 @@ if __name__ == "__main__":
     cpu_device = torch.device("cpu")
     city = args.city
 
-    test_data_path = f"/home/kemove/devdata1/zyx/datasets/{city}_Filtered/{city}_Filtered_Polygon_Processed.pkl"
+    # 测试结果时有时数据不在指定文件夹，在此处修改文件路径
+    test_data_path = "*/*.pkl"
     test_json_path = join(dirname(test_data_path), "info.json")
 
     with open(test_json_path) as f:
